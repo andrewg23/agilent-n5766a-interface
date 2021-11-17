@@ -10,9 +10,36 @@ def getStatus():
     options.headless = True
     options.page_load_strategy = 'normal'
 
+    # Get power status
     driver = webdriver.Chrome(service=s, options=options)
     url='http://169.254.95.52/web.exe?file=N57xxFrontPanel.html'
     driver.get(url)
+
+    button = driver.find_element(By.XPATH, '//img[@alt="On Off Button"]')
+    #By.CSS, img[@alt='On Off Button']
+    usemap = button.get_attribute('usemap')
+
+    if(usemap == "#turnon1"):
+        power = "Off"
+    elif (usemap == "#turnoff1"):
+        power = "On"
+    else:
+        power = "Unknown"
+
+    driver.quit()
+
+    # Get Voltage and Current Settings
+    driver = webdriver.Chrome(service=s, options=options)
+    url='http://169.254.95.52/web.exe?file=N57xxmodifySettings.html'
+    driver.get(url)
+
+    voltage = driver.find_element(By.NAME, "voltage").get_attribute('value')
+    current = driver.find_element(By.NAME, "current").get_attribute('value')
+    
+    retString = "\nPower Status: " + power + "\nVoltage: " + voltage + "\nCurrent: " + current
+
+    return retString
+
 
 def setPower(status):
     s=Service('./chromedriver')
