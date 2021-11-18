@@ -2,7 +2,7 @@
 
 ## Quick Refference
 `python psCommand.py -p X -v X - c X`
-* `-p` or `--power` ->  Set Power status, 1 on, 0 off
+* `-p` or `--power`   ->  Set Power status, 1 on, 0 off
 * `-v` or `--voltage` -> Set Voltage
 * `-c` or `--current` -> Set current
 
@@ -13,7 +13,7 @@
      * It should be of the form 169.254.*
      * Usually it is 169.254.95.52
 4) Enter the IP address into a browser and it should take you to the powersupply's website.
-    * It may few minutes for the website to be available
+    * It may take few minutes for the website to be available
     * You can change all the settings from the "Browser Web Control" tab found in the upper left-hand corner of the page
 
 ## Getting the Software Setup
