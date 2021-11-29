@@ -21,6 +21,7 @@ If you haven't done so, clone this repository on the computer that will be commu
 You will need to use Google Chrome for this to work!
 1) Download [chromedriver](https://sites.google.com/chromium.org/driver/downloads) into `/agilent-n5766a-interface`
     * The path to the driver should be `/agilent-n5766a-interface/chromedriver`
+    * For more detailed instructions on installing the driver see the [Selenium Documentation](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/)
 3) Install the selenium python library
     * `pip install selenium`
 
